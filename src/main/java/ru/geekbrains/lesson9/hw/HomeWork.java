@@ -4,23 +4,23 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class HomeWork {
-
-
     public static void main(String[] args) {
 
-        List<Student> students = HomeWorkData.getStudentsList(); // Получаем список студентов
-        Course randomCourse = HomeWorkData.getRandomCourse(); // Получаем случайный курс
-        System.out.println(getUnicsCourses(students)); // Первая функция
-        System.out.println(getStudentsWithMoreCourses(students)); // Вторая функция
-        System.out.println(getStudentsWithCourse(students, randomCourse)); // Третья функция
+
+                List<Student> students = HomeWorkData.getStudentsList();
+        Course randomCourse = HomeWorkData.getRandomCourse();
+        System.out.println(getUnicsCourses(students));
+        System.out.println(getStudentsWithMoreCourses(students));
+        System.out.println(getStudentsWithCourse(students, randomCourse));
     }
 
     public static List<Course> getUnicsCourses(List<Student> students) {
-        return students.stream() // Создаем стрим
-                .flatMap(student -> student.getAllCourses().stream()) // Из списка студентов вытаскиеваем списки курсов в один список и дальше продолжаем стрим по ним
-                .distinct() // Оставляем только уникальные курсы
-                .collect(Collectors.toList()); // Собираем результат в список
+        return students.stream()
+                .flatMap(student -> student.getAllCourses().stream())
+                .distinct()
+                .collect(Collectors.toList());
     }
+
 
     public static List<Student> getStudentsWithMoreCourses(List<Student> students) {
         return students.stream() // Создаем стрим

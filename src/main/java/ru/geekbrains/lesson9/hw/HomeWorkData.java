@@ -6,7 +6,8 @@ import java.util.Random;
 
 public class HomeWorkData {
 
-    public static Course getRandomCourse() {
+
+            public static Course getRandomCourse() {
         Random random = new Random();
         List<String> courses = Arrays.asList("Java", "Go", "Python", "Swift", "JavaScript", "C#");
         return new Course(courses.get(random.nextInt(courses.size())));
