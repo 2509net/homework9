@@ -4,9 +4,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class HomeWork {
+
     public static void main(String[] args) {
-
-
                 List<Student> students = HomeWorkData.getStudentsList();
         Course randomCourse = HomeWorkData.getRandomCourse();
         System.out.println(getUnicsCourses(students));
@@ -35,4 +34,5 @@ public class HomeWork {
                 .filter(student -> student.getAllCourses().contains(course)) // Фильтруем стрим по принципу, что список курсов студента должен содержать переданный курс
                 .collect(Collectors.toList()); // Собираем результат в список
     }
+
 }
